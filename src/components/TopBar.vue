@@ -1,53 +1,121 @@
 <template>
-<nav class="fh5co-nav" role="navigation">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="top-menu">
+<!-- Nav Area -->
+<div class="original-nav-area" id="stickyNav">
+    <div class="classy-nav-container breakpoint-off">
         <div class="container">
-          <div class="row">
-            <div class="col-sm-7 text-left menu-1">
-              <ul>
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="blog.html">Lifestyle</a></li>
-                <li class="has-dropdown">
-                  <a href="blog.html">Blog</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Web Design</a></li>
-                    <li><a href="#">eCommerce</a></li>
-                    <li><a href="#">Branding</a></li>
-                    <li><a href="#">API</a></li>
-                  </ul>
-                </li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-5">
-              <ul class="fh5co-social-icons">
-                <li><a href="#"><i class="icon-twitter-with-circle"></i></a></li>
-                <li><a href="#"><i class="icon-facebook-with-circle"></i></a></li>
-                <li><a href="#"><i class="icon-linkedin-with-circle"></i></a></li>
-                <li><a href="#"><i class="icon-dribbble-with-circle"></i></a></li>
-              </ul>
-            </div>
-          </div>
+            <!-- Classy Menu -->
+            <nav class="classy-navbar justify-content-between">
+
+                <!-- Subscribe btn -->
+                <div class="subscribe-btn">
+                    <a href="#" class="btn subscribe-btn" data-toggle="modal" data-target="#subsModal">Subscribe</a>
+                </div>
+
+                <!-- Navbar Toggler -->
+                <div class="classy-navbar-toggler">
+                    <span class="navbarToggler"><span></span><span></span><span></span></span>
+                </div>
+
+                <!-- Menu -->
+                <div class="classy-menu" id="originalNav">
+                    <!-- close btn -->
+                    <div class="classycloseIcon">
+                        <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                    </div>
+
+                    <!-- Nav Start -->
+                    <div class="classynav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">Pages</a>
+                                <ul class="dropdown">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li><a href="single-post.html">Single Post</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="coming-soon.html">Coming Soon</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Catagory</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Catagory 1</a></li>
+                                    <li><a href="#">Catagory 1</a></li>
+                                    <li><a href="#">Catagory 1</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">Catagory 2</a></li>
+                                            <li><a href="#">Catagory 2</a></li>
+                                            <li><a href="#">Catagory 2</a>
+                                                <ul class="dropdown">
+                                                    <li><a href="#">Catagory 3</a></li>
+                                                    <li><a href="#">Catagory 3</a></li>
+                                                    <li><a href="#">Catagory 3</a></li>
+                                                    <li><a href="#">Catagory 3</a></li>
+                                                    <li><a href="#">Catagory 3</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Catagory 2</a></li>
+                                            <li><a href="#">Catagory 2</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Catagory 1</a></li>
+                                    <li><a href="#">Catagory 1</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="#">Megamenu</a>
+                                <div class="megamenu">
+                                    <ul class="single-mega cn-col-4">
+                                        <li class="title">Headline 1</li>
+                                        <li><a href="#">Mega Menu Item 1</a></li>
+                                        <li><a href="#">Mega Menu Item 2</a></li>
+                                        <li><a href="#">Mega Menu Item 3</a></li>
+                                        <li><a href="#">Mega Menu Item 4</a></li>
+                                        <li><a href="#">Mega Menu Item 5</a></li>
+                                    </ul>
+                                    <ul class="single-mega cn-col-4">
+                                        <li class="title">Headline 2</li>
+                                        <li><a href="#">Mega Menu Item 1</a></li>
+                                        <li><a href="#">Mega Menu Item 2</a></li>
+                                        <li><a href="#">Mega Menu Item 3</a></li>
+                                        <li><a href="#">Mega Menu Item 4</a></li>
+                                        <li><a href="#">Mega Menu Item 5</a></li>
+                                    </ul>
+                                    <ul class="single-mega cn-col-4">
+                                        <li class="title">Headline 3</li>
+                                        <li><a href="#">Mega Menu Item 1</a></li>
+                                        <li><a href="#">Mega Menu Item 2</a></li>
+                                        <li><a href="#">Mega Menu Item 3</a></li>
+                                        <li><a href="#">Mega Menu Item 4</a></li>
+                                        <li><a href="#">Mega Menu Item 5</a></li>
+                                    </ul>
+                                    <ul class="single-mega cn-col-4">
+                                        <li class="title">Headline 4</li>
+                                        <li><a href="#">Mega Menu Item 1</a></li>
+                                        <li><a href="#">Mega Menu Item 2</a></li>
+                                        <li><a href="#">Mega Menu Item 3</a></li>
+                                        <li><a href="#">Mega Menu Item 4</a></li>
+                                        <li><a href="#">Mega Menu Item 5</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+
+                        <!-- Search Form  -->
+                        <div id="search-wrapper">
+                            <form action="#">
+                                <input type="text" id="search" placeholder="Search something...">
+                                <div id="close-icon"></div>
+                                <input class="d-none" type="submit" value="">
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Nav End -->
+                </div>
+            </nav>
         </div>
-      </div>
     </div>
-    <div class="row">
-      <div class="col-xs-12 text-center menu-2">
-        <div id="fh5co-logo">
-          <h1>
-            <a href="index.html">
-            Paper<span>.</span>
-            <small>Blog Theme</small>
-            </a>
-          </h1>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
+</div>
 </template>
 
 <script>
@@ -78,5 +146,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  
+
 </style>

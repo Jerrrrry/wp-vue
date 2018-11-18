@@ -1,22 +1,22 @@
 <template>
   <div id="app">
-    <div id="page">
+    <header class="header-area">
+      <Topheader/>
       <TopBar/>
+    </header>
 
-      <div id="wrapper">
+    <div id="wrapper">
 
-        <Loading
-          v-if="loadingOn"
-          :message="loadingMessage"
-          :showWheel="loadingWheel"
-        />
+      <Loading
+        v-if="loadingOn"
+        :message="loadingMessage"
+        :showWheel="loadingWheel"
+      />
 
-        <router-view :key="this.viewKey"></router-view>
+      <router-view :key="this.viewKey"></router-view>
 
-      </div>
-
-      <Foot />
     </div>
+    <Foot />
   </div>
 </template>
 
@@ -26,6 +26,7 @@
   import Loading from './components/Loading';
   import Updater from './components/Updater';
   import TopBar from './components/TopBar';
+  import Topheader from './components/Topheader';
 
   export default {
     name: 'App',
@@ -88,7 +89,8 @@
       Foot,
       Loading,
       Updater,
-      TopBar
+      TopBar,
+      Topheader
     }
   }
 </script>
