@@ -1,25 +1,53 @@
 <template>
-  <nav>
-
-    <h1>
-      <router-link
-        :to="{
-          name: 'home',
-        }">
-        WP Vue
-      </router-link>
-    </h1>
-
-    <div>
-      <p>
-        Currently presenting content from <a :href="sourceURL">{{ splitEndpoint[2] }}</a>.
-      </p>
-
-      <button @click="showUpdater">
-        Change Endpoint
-      </button>
+<nav class="fh5co-nav" role="navigation">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="top-menu">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-7 text-left menu-1">
+              <ul>
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Lifestyle</a></li>
+                <li class="has-dropdown">
+                  <a href="blog.html">Blog</a>
+                  <ul class="dropdown">
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">eCommerce</a></li>
+                    <li><a href="#">Branding</a></li>
+                    <li><a href="#">API</a></li>
+                  </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-5">
+              <ul class="fh5co-social-icons">
+                <li><a href="#"><i class="icon-twitter-with-circle"></i></a></li>
+                <li><a href="#"><i class="icon-facebook-with-circle"></i></a></li>
+                <li><a href="#"><i class="icon-linkedin-with-circle"></i></a></li>
+                <li><a href="#"><i class="icon-dribbble-with-circle"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </nav>
+    <div class="row">
+      <div class="col-xs-12 text-center menu-2">
+        <div id="fh5co-logo">
+          <h1>
+            <a href="index.html">
+            Paper<span>.</span>
+            <small>Blog Theme</small>
+            </a>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
 </template>
 
 <script>
@@ -50,54 +78,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    align-items: center;
-    margin-bottom: 1rem;
-    background: rgba($gray--light, .9);
-    padding: 1rem 2rem;
-    border-bottom: 2px solid darken($gray--light, 5%);
-
-    @include media($small) {
-      flex-direction: row;
-    }
-  }
-
-  div {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-
-    @include media($mobile) {
-      flex-direction: row;
-    }
-  }
-
-  button {
-    @include media($mobile) {
-      margin: 0 0 0 1rem;
-    }
-  }
-
-  h1 {
-    margin: 0;
-  }
-
-  a {
-    font-weight: bold;
-  }
-
-  p {
-    text-align: center;
-    margin: .5rem 0 1rem;
-
-    @include media($mobile) {
-      margin: 0;
-      text-align: right;
-    }
-  }
+  
 </style>
-

@@ -1,29 +1,22 @@
 <template>
   <div id="app">
+    <div id="page">
+      <TopBar/>
 
-    <TopBar
-      @showUpdater="showUpdater = true"
-    />
+      <div id="wrapper">
 
-    <div id="wrapper">
+        <Loading
+          v-if="loadingOn"
+          :message="loadingMessage"
+          :showWheel="loadingWheel"
+        />
 
-      <Updater
-        v-if="showUpdater"
-        :error="error"
-        @close="showUpdater = false"
-      />
+        <router-view :key="this.viewKey"></router-view>
 
-      <Loading
-        v-if="loadingOn"
-        :message="loadingMessage"
-        :showWheel="loadingWheel"
-      />
+      </div>
 
-      <router-view :key="this.viewKey"></router-view>
-
+      <Foot />
     </div>
-
-    <Foot />
   </div>
 </template>
 
