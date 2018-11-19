@@ -6,6 +6,8 @@
     <Homeposts/>
   </div>
 
+  <Show/>
+
 </div>
 </template>
 
@@ -14,6 +16,7 @@
 import Slider from '../components/Slider';
 import Guide from '../components/Guide';
 import Homeposts from '../components/Homeposts';
+import Show from '../components/Show';
 export default {
   name: 'Home',
 
@@ -24,7 +27,8 @@ export default {
   components:{
     Slider,
     Guide,
-    Homeposts
+    Homeposts,
+    Show
   }
 
 }
