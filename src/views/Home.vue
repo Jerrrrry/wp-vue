@@ -3,6 +3,7 @@
   <Slider/>
   <div class="blog-wrapper section-padding-100 clearfix">
     <Guide/>
+    <Homeposts/>
   </div>
 
 </div>
@@ -12,6 +13,7 @@
 
 import Slider from '../components/Slider';
 import Guide from '../components/Guide';
+import Homeposts from '../components/Homeposts';
 export default {
   name: 'Home',
 
@@ -21,7 +23,8 @@ export default {
 
   components:{
     Slider,
-    Guide
+    Guide,
+    Homeposts
   }
 
 }
