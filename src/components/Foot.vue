@@ -1,51 +1,63 @@
 <template>
-<footer id="fh5co-footer" role="contentinfo">
-  <div class="container">
-    <div class="row row-pb-md">
-      <div class="col-md-4 fh5co-widget">
-        <h4>LovePlanet</h4>
-        <p>True Life and Make Fun</p>
-      </div>
-      <div class="col-md-4 col-md-push-1">
-        <h4>Links</h4>
-        <ul class="fh5co-footer-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Lifestyle</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
+<!-- ##### Footer Area Start ##### -->
+<footer class="footer-area text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
 
-      <div class="col-md-4 col-md-push-1">
-        <h4>Contact Information</h4>
-        <ul class="fh5co-footer-links">
-          <li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
-          <li><a href="http://freehtml5.co">FreeHTML5.co</a></li>
-        </ul>
-      </div>
+                <!-- Footer Nav Area -->
+                <div class="classy-nav-container breakpoint-off">
+                    <!-- Classy Menu -->
+                    <nav class="classy-navbar justify-content-center">
 
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Lifestyle</a></li>
+                                    <li><a href="#">travel</a></li>
+                                    <li><a href="#">Music</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+
+                <!-- Footer Social Area -->
+                <div class="footer-social-area mt-30">
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Behance"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="row copyright">
-      <div class="col-md-12 text-center">
-        <p>
-          <small class="block">&copy; 2016 LovePlanet. All Rights Reserved.</small>
-          <small class="block">Designed by Susan Lin & Yubin Qiu</small>
-        </p>
-        <p>
-          <ul class="fh5co-social-icons">
-            <li><a href="#"><i class="icon-twitter"></i></a></li>
-            <li><a href="#"><i class="icon-facebook"></i></a></li>
-            <li><a href="#"><i class="icon-linkedin"></i></a></li>
-            <li><a href="#"><i class="icon-dribbble"></i></a></li>
-          </ul>
-        </p>
-      </div>
-    </div>
 
-  </div>
+Copyright &copy All rights reserved
+
+
 </footer>
+<!-- ##### Footer Area End ##### -->
 </template>
 
 <script>
