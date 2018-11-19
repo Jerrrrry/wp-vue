@@ -6,15 +6,7 @@
     </header>
 
     <div id="wrapper">
-
-      <Loading
-        v-if="loadingOn"
-        :message="loadingMessage"
-        :showWheel="loadingWheel"
-      />
-
       <router-view :key="this.viewKey"></router-view>
-
     </div>
     <Foot />
   </div>
@@ -23,7 +15,6 @@
 <script>
   import bus from './bus';
   import Foot from './components/Foot';
-  import Loading from './components/Loading';
   import Updater from './components/Updater';
   import TopBar from './components/TopBar';
   import Topheader from './components/Topheader';
@@ -87,7 +78,6 @@
 
     components: {
       Foot,
-      Loading,
       Updater,
       TopBar,
       Topheader
@@ -96,20 +86,5 @@
 </script>
 
 <style lang="scss">
-  @import "assets/scss/_base.scss";
 
-  #app {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  #wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-
-    @include media($small) {
-      padding: 2rem;
-    }
-  }
 </style>

@@ -63,47 +63,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  div {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    background: rgba($white, .99);
-    z-index: 1;
-  }
 
-  form {
-    text-align: center;
-    width: 350px;
-    max-width: calc(100% - 2rem);
-  }
-
-  button {
-    width: 100%;
-    margin-bottom: .75rem;
-  }
-
-  input {
-    border: 2px solid $gray--mediumLight;
-  }
-
-  a {
-    color: $gray--medium;
-
-    &:hover {
-      color: $gray;
-    }
-  }
-
-  span {
-    color: $salmon;
-    display: inline-block;
-    margin-bottom: 1rem;
-  }
 </style>
-

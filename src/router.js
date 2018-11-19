@@ -4,14 +4,20 @@ import Feed from './views/Feed';
 import FourOFour from './views/FourOFour';
 import Post from './views/Post';
 import bus from './bus';
+import Home from './views/Home';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    name: 'home',
+    name: 'index',
     path: '/',
-    redirect: '/posts'
+    redirect:'/index'
+  },
+  {
+    name: 'home',
+    path: '/index',
+    component:Home
   },
   {
     name: 'posts',
