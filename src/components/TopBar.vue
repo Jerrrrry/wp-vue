@@ -26,79 +26,38 @@
                     <!-- Nav Start -->
                     <div class="classynav">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about-us.html">About Us</a></li>
-                                    <li><a href="single-post.html">Single Post</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="coming-soon.html">Coming Soon</a></li>
-                                </ul>
+                            <li>
+                              <a href="/">Home</a>
                             </li>
-                            <li><a href="#">Catagory</a>
-                                <ul class="dropdown">
-                                    <li><a href="#">Catagory 1</a></li>
-                                    <li><a href="#">Catagory 1</a></li>
-                                    <li><a href="#">Catagory 1</a>
-                                        <ul class="dropdown">
-                                            <li><a href="#">Catagory 2</a></li>
-                                            <li><a href="#">Catagory 2</a></li>
-                                            <li><a href="#">Catagory 2</a>
-                                                <ul class="dropdown">
-                                                    <li><a href="#">Catagory 3</a></li>
-                                                    <li><a href="#">Catagory 3</a></li>
-                                                    <li><a href="#">Catagory 3</a></li>
-                                                    <li><a href="#">Catagory 3</a></li>
-                                                    <li><a href="#">Catagory 3</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Catagory 2</a></li>
-                                            <li><a href="#">Catagory 2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Catagory 1</a></li>
-                                    <li><a href="#">Catagory 1</a></li>
-                                </ul>
+
+                            <li>
+                              <router-link
+                                :to="{
+                                  name: 'posts',
+                                }"
+                              >Posts
+                              </router-link>
                             </li>
-                            <li><a href="about-us.html">About Us</a></li>
-                            <li><a href="#">Megamenu</a>
-                                <div class="megamenu">
-                                    <ul class="single-mega cn-col-4">
-                                        <li class="title">Headline 1</li>
-                                        <li><a href="#">Mega Menu Item 1</a></li>
-                                        <li><a href="#">Mega Menu Item 2</a></li>
-                                        <li><a href="#">Mega Menu Item 3</a></li>
-                                        <li><a href="#">Mega Menu Item 4</a></li>
-                                        <li><a href="#">Mega Menu Item 5</a></li>
-                                    </ul>
-                                    <ul class="single-mega cn-col-4">
-                                        <li class="title">Headline 2</li>
-                                        <li><a href="#">Mega Menu Item 1</a></li>
-                                        <li><a href="#">Mega Menu Item 2</a></li>
-                                        <li><a href="#">Mega Menu Item 3</a></li>
-                                        <li><a href="#">Mega Menu Item 4</a></li>
-                                        <li><a href="#">Mega Menu Item 5</a></li>
-                                    </ul>
-                                    <ul class="single-mega cn-col-4">
-                                        <li class="title">Headline 3</li>
-                                        <li><a href="#">Mega Menu Item 1</a></li>
-                                        <li><a href="#">Mega Menu Item 2</a></li>
-                                        <li><a href="#">Mega Menu Item 3</a></li>
-                                        <li><a href="#">Mega Menu Item 4</a></li>
-                                        <li><a href="#">Mega Menu Item 5</a></li>
-                                    </ul>
-                                    <ul class="single-mega cn-col-4">
-                                        <li class="title">Headline 4</li>
-                                        <li><a href="#">Mega Menu Item 1</a></li>
-                                        <li><a href="#">Mega Menu Item 2</a></li>
-                                        <li><a href="#">Mega Menu Item 3</a></li>
-                                        <li><a href="#">Mega Menu Item 4</a></li>
-                                        <li><a href="#">Mega Menu Item 5</a></li>
-                                    </ul>
-                                </div>
+
+                            <li>
+                              <router-link
+                                :to="{
+                                  name: 'aboutus',
+                                }"
+                              >About Us
+                              </router-link>
                             </li>
-                            <li><a href="contact.html">Contact</a></li>
+
+                            <li>
+                              <router-link
+                                :to="{
+                                  name: 'contact',
+                                }"
+                              >Contact
+                              </router-link>
+                            </li>
+
+
                         </ul>
 
                         <!-- Search Form  -->

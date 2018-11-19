@@ -5,6 +5,7 @@ import FourOFour from './views/FourOFour';
 import Post from './views/Post';
 import bus from './bus';
 import Home from './views/Home';
+import Posts from './views/Posts';
 
 Vue.use(VueRouter);
 
@@ -20,9 +21,14 @@ const routes = [
     component:Home
   },
   {
+    name: 'allposts',
+    path: '/allposts',
+    component: Feed
+  },
+  {
     name: 'posts',
     path: '/posts',
-    component: Feed
+    component: Posts
   },
   {
     name: 'post',
@@ -32,7 +38,7 @@ const routes = [
   {
     name: 'page',
     path: '/page/:page',
-    component: Feed
+    component: Posts
   },
   {
     name: 'four-o-four',
