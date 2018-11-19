@@ -1,10 +1,17 @@
 <template>
-<Slider/>
+<div>
+  <Slider/>
+  <div class="blog-wrapper section-padding-100 clearfix">
+    <Guide/>
+  </div>
+
+</div>
 </template>
 
 <script>
 
 import Slider from '../components/Slider';
+import Guide from '../components/Guide';
 export default {
   name: 'Home',
 
@@ -13,7 +20,8 @@ export default {
   },
 
   components:{
-    Slider
+    Slider,
+    Guide
   }
 
 }
