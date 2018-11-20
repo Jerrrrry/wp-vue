@@ -4,7 +4,14 @@
     <div class="row align-items-center">
         <div class="col-12 col-md-6">
             <div class="single-blog-thumbnail">
-                <img :src="post.featured_image" alt="Blog Post Featured Image"/>
+                <router-link
+                  :to="{
+                    name: 'post',
+                    params: { slug: post.slug }
+                  }"
+                ><img :src="post.featured_image" alt="Blog Post Featured Image"/>
+                </router-link>
+
                 <div class="post-date">
                     <a href="#">12 <span>{{monthConvert(post.date)}}</span></a>
                 </div>
@@ -16,7 +23,7 @@
                 <div class="line"></div>
                 <a href="#" class="post-tag">Lifestyle</a>
                 <h4><a href="#" class="post-headline">{{post.title.rendered}}</a></h4>
-                
+
             </div>
         </div>
     </div>

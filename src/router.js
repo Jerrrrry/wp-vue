@@ -32,7 +32,7 @@ const routes = [
   },
   {
     name: 'post',
-    path: '/posts/:slug',
+    path: '/post/:slug',
     component: Post
   },
   {
