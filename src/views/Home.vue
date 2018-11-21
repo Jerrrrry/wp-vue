@@ -3,7 +3,6 @@
   <Slider/>
   <div class="blog-wrapper section-padding-100 clearfix">
     <Guide/>
-    <Homeposts/>
   </div>
 
   <Show/>
