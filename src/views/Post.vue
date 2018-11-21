@@ -87,15 +87,6 @@
       }
     },
 
-    mounted: async function () {
-      this.post = await this.setPost();
-      this.link = this.post.link;
-      this.date = this.getFormattedDate(this.post.date);
-      this.title = this.post.title.rendered;
-      this.content = this.post.content.rendered;
-      this.featured_image = await this.getFeaturedImage(this.post.featured_media);
-    },
-
     created: async function () {
       this.post = await this.setPost();
       this.link = this.post.link;
@@ -136,7 +127,7 @@
           return null;
         }
 
-        return response.data.media_details.sizes['medium'].source_url;
+        return response.data.media_details.sizes['large'].source_url;
       }
     },
 
