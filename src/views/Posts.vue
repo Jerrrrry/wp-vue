@@ -1,19 +1,21 @@
 <template>
 <div class="container">
     <div class="row">
-        <div class="col-12 col-lg-12">
-          <Spost
-            v-for="post in posts"
-            :post="post"
-            :key="post.id"
-          />
 
+      <Hpost
+        v-for="post in posts"
+        :post="post"
+        :key="post.id"
+      />
+
+
+      <div class="col-12 col-lg-12">
           <Pagination
             :currentPage="parseInt(page)"
             :totalPages="parseInt(totalPages)"
           ></Pagination>
 
-        </div>
+      </div>
     </div>
 </div>
 </template>
@@ -22,7 +24,7 @@
 
 import bus from '../bus';
 import ajax from '../mixins/ajax';
-import Spost from '../components/Spost'
+import Hpost from '../components/Hpost'
 import Pagination from '../components/Pagination';
 
 export default {
@@ -39,7 +41,7 @@ export default {
   },
 
   components:{
-    Spost,Pagination
+    Hpost,Pagination
   },
 
   mounted: function () {

@@ -4,7 +4,7 @@
     <!-- Single Blog Area  -->
     <div class="single-blog-area blog-style-2 mb-50">
         <div class="single-blog-thumbnail">
-            <img :src="post.featured_image" alt="Blog Post Featured Image"/>
+            <img :src="featured_image" alt="Blog Post Featured Image"/>
             <div class="post-tag-content">
                 <div class="container">
                     <div class="row">
@@ -87,6 +87,15 @@
       }
     },
 
+    mounted: async function () {
+      this.post = await this.setPost();
+      this.link = this.post.link;
+      this.date = this.getFormattedDate(this.post.date);
+      this.title = this.post.title.rendered;
+      this.content = this.post.content.rendered;
+      this.featured_image = await this.getFeaturedImage(this.post.featured_media);
+    },
+
     created: async function () {
       this.post = await this.setPost();
       this.link = this.post.link;
@@ -95,7 +104,6 @@
       this.content = this.post.content.rendered;
       this.featured_image = await this.getFeaturedImage(this.post.featured_media);
 
-      bus.$emit('toggleLoading', false);
     },
 
     methods: {
@@ -125,7 +133,7 @@
 
           response = await this.get(`/media/${id}`);
         } catch (error) {
-          return '/img/bg-img/b5.jpg';
+          return null;
         }
 
         return response.data.media_details.sizes['medium'].source_url;
