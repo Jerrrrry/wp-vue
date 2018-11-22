@@ -4,7 +4,7 @@
     <!-- Single Blog Area  -->
     <div class="single-blog-area blog-style-2 mb-50">
         <div class="single-blog-thumbnail">
-            <img :src="featured_image" alt="Blog Post Featured Image"/>
+            <img :src="post.featured_image"/>
             <div class="post-tag-content">
                 <div class="container">
                     <div class="row">
@@ -93,7 +93,7 @@
       this.date = this.getFormattedDate(this.post.date);
       this.title = this.post.title.rendered;
       this.content = this.post.content.rendered;
-      this.featured_image = await this.getFeaturedImage(this.post.featured_media);
+
 
     },
 
@@ -108,13 +108,18 @@
             this.$router.push({name: 'four-o-four'});
             return;
           }
+          console.log('setPost');
+          this.post = await this.getImage(response.data[0]);
 
+          console.log('please give me a shit');
           resolve(response.data[0]);
+
 
         });
       },
 
       getFeaturedImage: async function (id) {
+
         let response;
         try {
 
@@ -126,13 +131,53 @@
         } catch (error) {
           return null;
         }
-
+        console.log('getFeaturedImage is working')
         return response.data.media_details.sizes['large'].source_url;
+      },
+
+      getImage:function(post){
+          return new Promise( async (resolve) => {
+            let response;
+            try {
+
+              if(post.featured_media <= 0) {
+                throw "No featured image.";
+              }
+
+              response = await this.get(
+                `/media/${post.featured_media}`
+              );
+              post.featured_image = response.data.media_details.sizes['large'].source_url;
+            } catch (error) {
+              post.featured_image = null;
+            }
+
+            resolve(post);
+          });
+
       }
     },
 
+
     components: {
       PostBody
+    },
+    watch:{
+      post:async function(){
+        let response;
+        try {
+
+          if(post.featured_media <= 0) {
+            throw "No featured image.";
+          }
+
+          response = await this.get(`/media/${post.featured_media}`);
+        } catch (error) {
+          return null;
+        }
+
+        this.featured_image=response.data.media_details.sizes['large'].source_url;
+      }
     }
   }
 </script>
