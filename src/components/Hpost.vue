@@ -11,7 +11,7 @@
             ><img :src="post.featured_image" alt="Blog Post Featured Image"/>
             </router-link>
             <div class="post-date">
-                <a href="#">12 <span>{{monthConvert(post.date)}}</span></a>
+                <a href="#">{{dateConvert(post.date)}}<span>{{monthConvert(post.date)}}</span></a>
             </div>
         </div>
         <!-- Blog Content -->
@@ -44,7 +44,11 @@ export default {
       let time=new Date(timeobj);
       let month_names= ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
       return month_names[time.getMonth()]
-    }
+    },
+    dateConvert:function(timeobj){
+      let time=new Date(timeobj);
+      return time.getDate()
+    },
   }
 
 }

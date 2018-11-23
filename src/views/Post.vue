@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="post-date">
-                                <a href="#">12 <span>march</span></a>
+                                <a href="#">{{dateConvert(post.date)}}<span>{{monthConvert(post.date)}}</span></a>
                             </div>
                         </div>
                     </div>
@@ -98,6 +98,15 @@
     },
 
     methods: {
+      monthConvert:function(timeobj){
+        let time=new Date(timeobj);
+        let month_names= ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        return month_names[time.getMonth()]
+      },
+      dateConvert:function(timeobj){
+        let time=new Date(timeobj);
+        return time.getDate()
+      },
       setPost: function () {
         return new Promise(async (resolve, reject) => {
           let response;
