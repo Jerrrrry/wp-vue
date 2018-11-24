@@ -4,8 +4,7 @@
   <div class="blog-wrapper section-padding-100 clearfix">
     <Guide/>
   </div>
-
-  <Show/>
+  <Ins/>
 
 </div>
 </template>
@@ -16,6 +15,7 @@ import Slider from '../components/Slider';
 import Guide from '../components/Guide';
 import Homeposts from '../components/Homeposts';
 import Show from '../components/Show';
+import Ins from '../components/Ins';
 export default {
   name: 'Home',
 
@@ -27,7 +27,8 @@ export default {
     Slider,
     Guide,
     Homeposts,
-    Show
+    Show,
+    Ins
   }
 
 }

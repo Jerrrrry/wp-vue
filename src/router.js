@@ -6,6 +6,7 @@ import Post from './views/Post';
 import bus from './bus';
 import Home from './views/Home';
 import Posts from './views/Posts';
+import Contact from './views/Contact';
 
 Vue.use(VueRouter);
 
@@ -39,6 +40,11 @@ const routes = [
     name: 'page',
     path: '/page/:page',
     component: Posts
+  },
+  {
+    name: 'contact',
+    path: '/contact',
+    component:Contact
   },
   {
     name: 'four-o-four',
