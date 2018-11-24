@@ -9,11 +9,11 @@
                   <div class="breaking-news-area">
                       <div id="breakingNewsTicker" class="ticker">
                           <ul>
-                              <li><a href="#">Hello World!</a></li>
-                              <li><a href="#">Hello Universe!</a></li>
-                              <li><a href="#">Hello Original!</a></li>
-                              <li><a href="#">Hello Earth!</a></li>
-                              <li><a href="#">Hello Colorlib!</a></li>
+                              <li><a href="#">你好，LA!</a></li>
+                              <li><a href="#">你好，Chino！</a></li>
+                              <li><a href="#">你好，好吃的！</a></li>
+                              <li><a href="#">你好，好玩的!</a></li>
+                              <li><a href="#">你好，所有兔兔们!</a></li>
                           </ul>
                       </div>
                   </div>

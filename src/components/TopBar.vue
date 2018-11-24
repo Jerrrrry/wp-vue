@@ -27,7 +27,7 @@
                     <div class="classynav">
                         <ul>
                             <li>
-                              <a href="/">Home</a>
+                              <a href="/">主页</a>
                             </li>
 
                             <li>
@@ -35,7 +35,7 @@
                                 :to="{
                                   name: 'posts',
                                 }"
-                              >Posts
+                              >文章
                               </router-link>
                             </li>
 
@@ -44,7 +44,7 @@
                                 :to="{
                                   name: 'aboutus',
                                 }"
-                              >About Us
+                              >关于我们
                               </router-link>
                             </li>
 
@@ -53,7 +53,7 @@
                                 :to="{
                                   name: 'contact',
                                 }"
-                              >Contact
+                              >联系我们
                               </router-link>
                             </li>
 
