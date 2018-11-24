@@ -6,7 +6,7 @@
           :class="{'is-disabled' : currentPage === 1}"
           :to="{ name: 'page', params: {page: this.currentPage - 1} }"
         >
-          Previous Page
+          前一页
         </router-link>
       </li>
       <li>
@@ -14,7 +14,7 @@
           :class="{'is-disabled' : currentPage === this.totalPages}"
           :to="{ name: 'page', params: {page: this.currentPage + 1} }"
         >
-          Next Page
+          下一页
         </router-link>
       </li>
     </ul>

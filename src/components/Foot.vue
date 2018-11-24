@@ -26,12 +26,36 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Lifestyle</a></li>
-                                    <li><a href="#">travel</a></li>
-                                    <li><a href="#">Music</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                  <li>
+                                    <a href="/">主页</a>
+                                  </li>
+
+                                  <li>
+                                    <router-link
+                                      :to="{
+                                        name: 'posts',
+                                      }"
+                                    >文章
+                                    </router-link>
+                                  </li>
+
+                                  <li>
+                                    <router-link
+                                      :to="{
+                                        name: 'aboutus',
+                                      }"
+                                    >关于我们
+                                    </router-link>
+                                  </li>
+
+                                  <li>
+                                    <router-link
+                                      :to="{
+                                        name: 'contact',
+                                      }"
+                                    >联系我们
+                                    </router-link>
+                                  </li>
                                 </ul>
                             </div>
                             <!-- Nav End -->

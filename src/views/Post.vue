@@ -27,8 +27,6 @@
                 <div class="single-blog-area blog-style-2 mb-50">
                     <!-- Blog Content -->
                     <div class="single-blog-content">
-                        <div class="line"></div>
-                        <a href="#" class="post-tag">Lifestyle</a>
                         <h4><a href="#" class="post-headline mb-0">{{title}}</a></h4>
 
                         <PostBody :content="content"></PostBody>
@@ -107,7 +105,7 @@
             return;
           }
           console.log('setPost');
-        
+
 
           this.post = await this.getTags(await this.getImage(response.data[0]));
 

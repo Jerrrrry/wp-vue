@@ -16,9 +16,15 @@
         </div>
         <!-- Blog Content -->
         <div class="single-blog-content mt-50">
-            <div class="line"></div>
-            <a href="#" class="post-tag">Lifestyle</a>
-            <h4><a href="#" class="post-headline">{{post.title.rendered}}</a></h4>
+            <h4>
+              <router-link
+                :to="{
+                  name: 'post',
+                  params: { slug: post.slug }
+                }"
+              >{{post.title.rendered}}
+              </router-link>
+            </h4>
 
         </div>
     </div>
