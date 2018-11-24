@@ -71,6 +71,15 @@
       }
     },
 
+    post: {
+
+      handler: function (val, oldVal) {
+        this.tags=this.post.taginfos;
+      },
+      deep: true
+
+    },
+
     created: async function () {
       this.post = await this.setPost();
       this.link = this.post.link;
@@ -105,14 +114,8 @@
             return;
           }
           console.log('setPost');
-
-
-          this.post = await this.getTags(await this.getImage(response.data[0]));
-
-
-
           console.log('please give me a shit');
-          resolve(this.post);
+          resolve(await this.getTags(await this.getImage(response.data[0])));
 
 
         });
