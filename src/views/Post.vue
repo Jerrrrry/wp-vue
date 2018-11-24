@@ -40,24 +40,7 @@
             <!-- ##### Sub Area ##### -->
             <div class="col-12 col-md-4 col-lg-12">
                 <div class="post-sidebar-area">
-
-                    <!-- Widget Area -->
-                    <div class="sidebar-widget-area">
-                        <h5 class="title">Tags</h5>
-                        <div class="widget-content">
-                            <ul class="tags">
-                                <li><a href="#">design</a></li>
-                                <li><a href="#">fashion</a></li>
-                                <li><a href="#">travel</a></li>
-                                <li><a href="#">music</a></li>
-                                <li><a href="#">party</a></li>
-                                <li><a href="#">video</a></li>
-                                <li><a href="#">photography</a></li>
-                                <li><a href="#">adventure</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!--Widget Area End-->
+                    <Tags :tags="post.taginfos"/>
                 </div>
             </div>
         </div>
@@ -71,6 +54,7 @@
   import utils from '../mixins/utils';
   import ajax from '../mixins/ajax';
   import PostBody from '../components/PostBody';
+  import Tags from '../components/Tags';
 
   export default {
     name: 'Post',
@@ -84,7 +68,8 @@
         link: '',
         title: '',
         content: '',
-        featured_image: ''
+        featured_image: '',
+        tags:[]
       }
     },
 
@@ -96,7 +81,10 @@
       this.content = this.post.content.rendered;
 
 
+
+
     },
+
 
     methods: {
       monthConvert:function(timeobj){
@@ -119,30 +107,17 @@
             return;
           }
           console.log('setPost');
-          this.post = await this.getImage(response.data[0]);
+        
+
+          this.post = await this.getTags(await this.getImage(response.data[0]));
+
+
 
           console.log('please give me a shit');
-          resolve(response.data[0]);
+          resolve(this.post);
 
 
         });
-      },
-
-      getFeaturedImage: async function (id) {
-
-        let response;
-        try {
-
-          if(post.featured_media <= 0) {
-            throw "No featured image.";
-          }
-
-          response = await this.get(`/media/${id}`);
-        } catch (error) {
-          return null;
-        }
-        console.log('getFeaturedImage is working')
-        return response.data.media_details.sizes['large'].source_url;
       },
 
       getImage:function(post){
@@ -163,32 +138,49 @@
             }
 
             resolve(post);
+
+            console.log('try me 2222')
           });
 
+      },
+
+      getTags:function (post) {
+        return new Promise(async (resolve)=>{
+          if(post.tags.length==0){
+            console.log('no tags')
+
+          }else{
+            console.log('begin process tags')
+            post.taginfos=[]
+            post.tags.forEach(async (tag)=>{
+              let response;
+              try{
+                response=await this.get(
+                  `/tags/${tag}`
+                );
+
+              }catch(error){
+                console.log('fail to add information')
+              }
+              console.log(response.data.name)
+              post.taginfos.push(response.data)
+            })
+
+
+
+          }
+          resolve(post)
+        });
       }
+
+
     },
 
 
     components: {
-      PostBody
+      PostBody,Tags
     },
-    watch:{
-      post:async function(){
-        let response;
-        try {
 
-          if(post.featured_media <= 0) {
-            throw "No featured image.";
-          }
-
-          response = await this.get(`/media/${post.featured_media}`);
-        } catch (error) {
-          return null;
-        }
-
-        this.featured_image=response.data.media_details.sizes['large'].source_url;
-      }
-    }
   }
 </script>
 

@@ -4,14 +4,9 @@
     <h5 class="title">Tags</h5>
     <div class="widget-content">
         <ul class="tags">
-            <li><a href="#">design</a></li>
-            <li><a href="#">fashion</a></li>
-            <li><a href="#">travel</a></li>
-            <li><a href="#">music</a></li>
-            <li><a href="#">party</a></li>
-            <li><a href="#">video</a></li>
-            <li><a href="#">photography</a></li>
-            <li><a href="#">adventure</a></li>
+            <li v-for="tag in tags"><a href="#">{{tag.name}}</a></li>
+            
+
         </ul>
     </div>
 </div>
@@ -19,6 +14,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'Tags',
 
@@ -29,7 +25,8 @@ export default {
     tags: {
       required: true
     }
-  }
+  },
+
 }
 
 </script>
