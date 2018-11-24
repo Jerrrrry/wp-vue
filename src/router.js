@@ -7,6 +7,7 @@ import bus from './bus';
 import Home from './views/Home';
 import Posts from './views/Posts';
 import Contact from './views/Contact';
+import Aboutus from './views/Aboutus';
 
 Vue.use(VueRouter);
 
@@ -45,6 +46,11 @@ const routes = [
     name: 'contact',
     path: '/contact',
     component:Contact
+  },
+  {
+    name: 'aboutus',
+    path: '/aboutus',
+    component:Aboutus
   },
   {
     name: 'four-o-four',

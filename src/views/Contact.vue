@@ -59,7 +59,7 @@
 
 <script>
 export default {
-  name: 'Name',
+  name: 'Contact',
 
   data () {
     return {}
