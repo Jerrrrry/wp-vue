@@ -3,6 +3,7 @@
   <div class="row">
     <div class="col-12 col-lg-12">
       <h3>{{tag.name}}</h3>
+      <p>{{tag.description}}</p>
     </div>
 
     <Hpost
