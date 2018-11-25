@@ -2,8 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-lg-12">
-      <h3>{{tag.name}}</h3>
-      <p>{{tag.description}}</p>
+      <h3>search for : {{search}}</h3>
     </div>
 
     <Hpost
@@ -12,14 +11,6 @@
       :key="post.id"
     />
 
-    <div class="col-12 col-lg-12">
-        <Pagination
-          :currentPage="parseInt(page)"
-          :totalPages="parseInt(totalPages)"
-          :tag="tag"
-        ></Pagination>
-
-    </div>
 
 
   </div>
@@ -35,75 +26,50 @@
 import bus from '../bus';
 import utils from '../mixins/utils';
 import ajax from '../mixins/ajax';
-import Pagination from '../components/Pagination/Tag';
 import Hpost from '../components/Hpost';
 
 export default {
-  name: 'Tag',
+  name: 'Search',
 
   data () {
     return {
-      tag:{},
-      posts:{},
-      page: 1,
-      totalPages: null
+      search:'',
+      posts:[],
     }
   },
 
   components:{
-    Pagination,Hpost
+    Hpost
   },
 
   mixins: [utils, ajax],
 
   created: function () {
-    if(this.$route.name === 'tagpost') {
-      this.page = this.$route.params.page;
-    }
-    if(this.$route.name === 'tag') {
-      this.page = 1;
-    }
+
   },
 
   mounted:async function (){
-  this.tag=await this.setTag()
-  this.posts=await this.setPosts()
+    this.search=await this.$route.params.search
+    this.posts=await this.setPosts()
 
   },
 
   methods:{
-    setTag: function () {
-      return new Promise(async (resolve, reject) => {
-        let response;
 
-        try {
-          response = await this.get(`/tags/${this.$route.params.id}`);
-        } catch (error) {
-          console.log(error)
-          this.$router.push({name: 'four-o-four'});
-          return;
-        }
-
-        resolve(response.data);
-
-
-      });
-    },
     setPosts: function () {
       console.log(this.$route.name);
       return new Promise(async (resolve, reject) => {
         let response;
-        let page=this.page;
+        let search=this.search;
 
         try {
-          response = await this.get(`/posts?tags=${this.$route.params.id}&per_page=${POSTS_PER_PAGE}&page=${page}`);
+          response = await this.get(`/posts?search=${search}`);
         } catch (error) {
           console.log(error)
 
           return;
         }
         console.log('setPosts');
-        this.getAdjacentPageData();
         resolve(await this.getFeaturedImages(response.data));
 
 
@@ -136,30 +102,6 @@ export default {
 
         Promise.all(requests).then((posts) => resolve(posts));
       });
-    },
-
-    getAdjacentPageData: async function (prevPage = false) {
-
-      let page = prevPage === true
-              ? parseInt(this.page) - 1
-              : parseInt(this.page) + 1;
-
-      let response;
-
-      if(page > 0) {
-        try {
-          response = await this.get(
-            `/posts?per_page=${POSTS_PER_PAGE}&page=${page}&tags=${this.$route.params.id}`
-          );
-        } catch (error) {
-          console.error(error);
-        }
-
-      }
-
-      if(!prevPage) {
-        this.getAdjacentPageData(true);
-      }
     },
 
 

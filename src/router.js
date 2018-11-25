@@ -9,6 +9,7 @@ import Posts from './views/Posts';
 import Contact from './views/Contact';
 import Aboutus from './views/Aboutus';
 import Tag from './views/Tag';
+import Search from './views/Search';
 
 Vue.use(VueRouter);
 
@@ -48,6 +49,11 @@ const routes = [
     name: 'page',
     path: '/page/:page',
     component: Posts
+  },
+  {
+    name: 'search',
+    path: '/search/:search',
+    component: Search
   },
   {
     name: 'tagposts',
