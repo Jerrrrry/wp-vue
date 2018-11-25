@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'Pagination',
+  name: 'Defaultpagination',
 
   props: {
     currentPage: {

@@ -20,7 +20,7 @@
 import bus from '../bus';
 import ajax from '../mixins/ajax';
 import Card from '../components/Card';
-import Pagination from '../components/Pagination';
+import Pagination from '../components/Pagination/Default';
 
 export default {
   name: 'Feed',

@@ -12,6 +12,15 @@
       :key="post.id"
     />
 
+    <div class="col-12 col-lg-12">
+        <Pagination
+          :currentPage="parseInt(page)"
+          :totalPages="parseInt(totalPages)"
+          :tag="tag"
+        ></Pagination>
+
+    </div>
+
 
   </div>
 </div>
@@ -26,7 +35,7 @@
 import bus from '../bus';
 import utils from '../mixins/utils';
 import ajax from '../mixins/ajax';
-import Pagination from '../components/Pagination';
+import Pagination from '../components/Pagination/Tag';
 import Hpost from '../components/Hpost';
 
 export default {
@@ -47,8 +56,13 @@ export default {
 
   mixins: [utils, ajax],
 
-  created:async function(){
-
+  created: function () {
+    if(this.$route.name === 'tagpost') {
+      this.page = this.$route.params.page;
+    }
+    if(this.$route.name === 'tag') {
+      this.page = 1;
+    }
   },
 
   mounted:async function (){
@@ -68,24 +82,27 @@ export default {
           this.$router.push({name: 'four-o-four'});
           return;
         }
-        console.log('setTag');
+
         resolve(response.data);
 
 
       });
     },
     setPosts: function () {
+      console.log(this.$route.name);
       return new Promise(async (resolve, reject) => {
         let response;
+        let page=this.page;
 
         try {
-          response = await this.get(`/posts?tags=${this.$route.params.id}`);
+          response = await this.get(`/posts?tags=${this.$route.params.id}&per_page=${POSTS_PER_PAGE}&page=${page}`);
         } catch (error) {
           console.log(error)
-          this.$router.push({name: 'four-o-four'});
+
           return;
         }
         console.log('setPosts');
+        this.getAdjacentPageData();
         resolve(await this.getFeaturedImages(response.data));
 
 
@@ -118,6 +135,30 @@ export default {
 
         Promise.all(requests).then((posts) => resolve(posts));
       });
+    },
+
+    getAdjacentPageData: async function (prevPage = false) {
+
+      let page = prevPage === true
+              ? parseInt(this.page) - 1
+              : parseInt(this.page) + 1;
+
+      let response;
+
+      if(page > 0) {
+        try {
+          response = await this.get(
+            `/posts?per_page=${POSTS_PER_PAGE}&page=${page}&tags=${this.$route.params.id}`
+          );
+        } catch (error) {
+          console.error(error);
+        }
+
+      }
+
+      if(!prevPage) {
+        this.getAdjacentPageData(true);
+      }
     },
 
 

@@ -25,7 +25,8 @@
 import bus from '../bus';
 import ajax from '../mixins/ajax';
 import Hpost from '../components/Hpost'
-import Pagination from '../components/Pagination';
+import Pagination from '../components/Pagination/Default';
+
 
 export default {
   name: 'Posts',

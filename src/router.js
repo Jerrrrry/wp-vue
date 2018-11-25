@@ -50,6 +50,11 @@ const routes = [
     component: Posts
   },
   {
+    name: 'tagposts',
+    path: '/tagposts/:slug/:page/:id',
+    component: Tag
+  },
+  {
     name: 'contact',
     path: '/contact',
     component:Contact
