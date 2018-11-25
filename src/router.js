@@ -8,6 +8,7 @@ import Home from './views/Home';
 import Posts from './views/Posts';
 import Contact from './views/Contact';
 import Aboutus from './views/Aboutus';
+import Tag from './views/Tag';
 
 Vue.use(VueRouter);
 
@@ -36,6 +37,12 @@ const routes = [
     name: 'post',
     path: '/post/:slug',
     component: Post
+  },
+
+  {
+    name: 'tag',
+    path: '/tag/:id',
+    component: Tag
   },
   {
     name: 'page',

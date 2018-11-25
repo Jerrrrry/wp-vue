@@ -4,8 +4,15 @@
     <h5 class="title">Tags</h5>
     <div class="widget-content">
         <ul class="tags">
-            <li v-for="tag in tags"><a href="#">{{tag.name}}</a></li>
-            <li><a href="x">nima</a></li>
+            <li v-for="tag in tags">
+              <router-link
+                :to="{
+                  name: 'tag',
+                  params: { id: tag.id }
+                }"
+              >{{tag.name}}
+              </router-link>
+            </li>
 
 
         </ul>
