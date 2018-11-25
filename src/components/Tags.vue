@@ -8,7 +8,7 @@
               <router-link
                 :to="{
                   name: 'tag',
-                  params: { id: tag.id }
+                  params: { id: tag.id,slug:tag.slug }
                 }"
               >{{tag.name}}
               </router-link>
