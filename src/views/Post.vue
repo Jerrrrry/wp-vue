@@ -38,7 +38,18 @@
             <!-- ##### Sub Area ##### -->
             <div class="col-12 col-md-4 col-lg-12">
                 <div class="post-sidebar-area">
-                    <Tags :tags="post.taginfos"/>
+                  <!-- Widget Area -->
+                  <div class="sidebar-widget-area">
+                      <h5 class="title">Tags</h5>
+                      <div class="widget-content">
+                          <ul class="tags">
+                              <li v-for="tag in tags"><a href="#">{{tag.name}}</a></li>
+
+
+                          </ul>
+                      </div>
+                  </div>
+                  <!--Widget Area End-->
                 </div>
             </div>
         </div>
@@ -71,26 +82,19 @@
       }
     },
 
-    post: {
-
-      handler: function (val, oldVal) {
-        this.tags=this.post.taginfos;
-      },
-      deep: true
-
-    },
-
     created: async function () {
-      this.post = await this.setPost();
+      this.post=await this.setup();
       this.link = this.post.link;
       this.date = this.getFormattedDate(this.post.date);
       this.title = this.post.title.rendered;
       this.content = this.post.content.rendered;
+      this.tags=this.post.taginfos;
 
 
 
 
     },
+
 
 
     methods: {
@@ -103,6 +107,12 @@
         let time=new Date(timeobj);
         return time.getDate()
       },
+
+      setup:function(){
+        return new Promise(async (resolve,reject)=>{
+          resolve(await this.getImage(await this.getTags(await this.setPost())));
+        });
+      },
       setPost: function () {
         return new Promise(async (resolve, reject) => {
           let response;
@@ -114,8 +124,7 @@
             return;
           }
           console.log('setPost');
-          console.log('please give me a shit');
-          resolve(await this.getTags(await this.getImage(response.data[0])));
+          resolve(response.data[0]);
 
 
         });
@@ -166,6 +175,8 @@
               console.log(response.data.name)
               post.taginfos.push(response.data)
             })
+
+
 
 
 

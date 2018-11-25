@@ -5,7 +5,8 @@
     <div class="widget-content">
         <ul class="tags">
             <li v-for="tag in tags"><a href="#">{{tag.name}}</a></li>
-            
+            <li><a href="x">nima</a></li>
+
 
         </ul>
     </div>
