@@ -6,7 +6,7 @@
     </header>
 
     <div id="wrapper">
-      <router-view :key="this.viewKey"></router-view>
+      <router-view :key="this.viewKey" v-title="title"></router-view>
     </div>
     <Foot />
   </div>

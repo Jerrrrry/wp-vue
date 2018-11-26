@@ -13,6 +13,7 @@ import Search from './views/Search';
 
 Vue.use(VueRouter);
 
+
 const routes = [
   {
     name: 'index',
@@ -85,6 +86,8 @@ const router = new VueRouter({
   mode: 'history',
   routes
 });
+
+
 
 router.afterEach((to, from) => {
 

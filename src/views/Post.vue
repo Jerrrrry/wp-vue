@@ -68,7 +68,7 @@
         title: '',
         content: '',
         featured_image: '',
-        tags:[]
+        tags:[],
       }
     },
 
@@ -79,6 +79,7 @@
       this.title = this.post.title.rendered;
       this.content = this.post.content.rendered;
       this.tags=this.post.taginfos;
+      document.title=this.post.title.rendered;
 
 
 
@@ -87,7 +88,13 @@
 
 
 
+
+
     methods: {
+      setTitle: function () {
+        let self=this
+        document.title = self.post.title.rendered
+      },
       monthConvert:function(timeobj){
         let time=new Date(timeobj);
         let month_names= ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
