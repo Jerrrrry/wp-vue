@@ -65,8 +65,7 @@ export default {
         );
         this.totalPages = response.headers['x-wp-totalpages'];
       } catch (error) {
-        bus.$emit('showUpdater', 'Are you sure that\'s a valid endpoint?');
-        bus.$emit('toggleLoading', false);
+        this.$router.push({name: 'four-o-four'});
         return;
       }
 

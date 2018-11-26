@@ -99,7 +99,7 @@ export default {
           response = await this.get(`/posts?tags=${this.$route.params.id}&per_page=${POSTS_PER_PAGE}&page=${page}`);
         } catch (error) {
           console.log(error)
-
+          this.$router.push({name: 'four-o-four'});
           return;
         }
         console.log('setPosts');

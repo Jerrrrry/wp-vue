@@ -63,9 +63,9 @@
                         <!-- Search Form  -->
                         <div id="search-wrapper">
                             <form action="#">
-                                <input type="text" id="search" placeholder="Search something...">
+                                <input type="text" id="search" placeholder="Search something..."  @keydown.enter.prevent="submitSearch" v-model="search">
                                 <div id="close-icon"></div>
-                                <input class="d-none" type="submit" value="">
+                                <input class="d-none" type="submit">
                             </form>
                         </div>
                     </div>
@@ -78,11 +78,19 @@
 </template>
 
 <script>
+import bus from '../bus';
+import ajax from '../mixins/ajax';
+
 export default {
   name: 'TopBar',
 
+  mixins:[ajax],
+
   data () {
-    return {}
+    return {
+      search:'',
+      term:''
+    }
   },
 
   computed: {
@@ -95,9 +103,19 @@ export default {
     }
   },
 
+  watch:{
+
+    search: function () {
+      this.term=this.search
+
+    },
+  },
+
   methods: {
-    showUpdater: function () {
-      this.$emit('showUpdater');
+
+    submitSearch:function(){
+
+       this.$router.push({name: 'search',params:{search:this.term}});
     }
   }
 }
