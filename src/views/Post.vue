@@ -79,7 +79,7 @@
       this.title = this.post.title.rendered;
       this.content = this.post.content.rendered;
       this.tags=this.post.taginfos;
-      document.title=this.post.title.rendered;
+      document.title=this.post.title.rendered+' '+this.$store.state.sitename;
 
 
 

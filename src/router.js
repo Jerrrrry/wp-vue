@@ -10,8 +10,10 @@ import Contact from './views/Contact';
 import Aboutus from './views/Aboutus';
 import Tag from './views/Tag';
 import Search from './views/Search';
+import meta from 'vue-meta';
 
 Vue.use(VueRouter);
+Vue.use(meta);
 
 
 const routes = [
